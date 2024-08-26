@@ -14,11 +14,64 @@ public class SeatReservation {
     this.flightDate = flightDate;
     this.firstName = firstName;
     this.lastName = lastName;
-    //getters
+    }
+    public String getFlightDesignator() {
+        return flightDesignator;
+    }
 
-    //setters
+    public LocalDate getFlightDate() {
+        return flightDate;
+    }
 
-    //main method && testing
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    // Setters
+    public void setFlightDesignator(String flightDesignator) {
+        this.flightDesignator = flightDesignator;
+    }
+
+    public void setFlightDate(LocalDate flightDate) {
+        this.flightDate = flightDate;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "SeatReservation{" +
+                "flightDesignator='" + (flightDesignator != null ? flightDesignator : "null") + '\'' +
+                ", flightDate=" + (flightDate != null ? flightDate : "null") +
+                ", firstName='" + (firstName != null ? firstName : "null") + '\'' +
+                ", lastName='" + (lastName != null ? lastName : "null") + '\'' +
+                '}';
+    }
+
+
+    public static void main(String[] args) {
+        // Create an instance of SeatReservation
+        SeatReservation reservation = new SeatReservation("AA123", LocalDate.of(2023, 8, 26), "John", "Doe");
+        System.out.println(reservation.toString());
+
+        // Testing my setters
+        reservation.setLastName("Smith");
+        reservation.setFlightDesignator("BB456");
+
+        // Print modified reservation details
+        System.out.println(reservation.toString());
+    }
   
 }
 
