@@ -33,6 +33,9 @@ public class SeatReservation {
 
     // Setters
     public void setFlightDesignator(String flightDesignator) {
+        if (flightDesignator == null || flightDesignator.length() < 4 || flightDesignator.length() > 6) {
+            throw new IllegalArgumentException("Flight Designator not in range of acceptable characters.");
+        }
         this.flightDesignator = flightDesignator;
     }
 
